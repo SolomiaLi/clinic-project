@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user profile - clinic</title>
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="home-page">
+
+    <header class="site-header">
+        <div class="header-container">
+            
+            <a href="index.html" class="logo-link">
+                <i class="fa-solid fa-staff-snake logo-icon"></i>
+                <span class="logo-text"></span>
+            </a>
+
+            <input type="checkbox" id="burger-toggle" class="burger-checkbox">
+
+            <nav class="main-nav">
+                <a href="services.html" class="nav-link">services</a>
+                <a href="doctors.html" class="nav-link">doctors</a>
+                <a href="contacts.html" class="nav-link">contacts</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="login.html" class="account-link" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket account-icon"></i>
+                    <span class="logout-text"></span>
+                </a>
+                <label for="burger-toggle" class="burger-label">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+            </div>
+            
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="profile-section">
+            
+            <div class="profile-header">
+                <h2 class="section-title">user information</h2>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="role-badge role-regular">regular patient</span>
+                </div>
+
+                <div class="profile-details">
+                    <div class="detail-row">
+                        <span class="detail-label">full name:</span>
+                        <span class="detail-value">John Doe</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">email:</span>
+                        <span class="detail-value">john.d@email.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">phone:</span>
+                        <span class="detail-value">+38 (050) 123-45-67</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">date of birth:</span>
+                        <span class="detail-value">15 May 1990</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">address:</span>
+                        <span class="detail-value">Kyiv, Khreshchatyk st. 1</span>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="login.html" class="btn-secondary" style="display: block; text-align: center;">log out</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-text">copyright 2024 clinic system. all rights reserved.</p>
+    </footer>
+
+</body>
+</html>
