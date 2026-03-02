@@ -1,0 +1,582 @@
+@charset "UTF-8";
+.btn-secondary, .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   5. ХЕДЕР ТА НАВІГАЦІЯ
+   ========================================= */
+.site-header {
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-link,
+.account-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.account-icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #3498db;
+}
+
+.burger-checkbox,
+.burger-label {
+  display: none;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* =========================================
+   6. ГОЛОВНИЙ КОНТЕНТ (Кнопки, Заголовки)
+   ========================================= */
+.btn-primary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3498db;
+  color: #ffffff;
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+.btn-primary:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+  transform: scale(1.05);
+}
+
+.section-title {
+  text-align: center;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  margin: 10px auto 0;
+}
+
+/* =========================================
+   7. СТОРІНКА ЛОГІНУ ТА ФОРМИ
+   ========================================= */
+.notification-banner {
+  background-color: #ff4d4f;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.login-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.form-control {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+.form-control:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.error-input {
+  border-color: #ff4d4f;
+}
+
+.validation-error {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-secondary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.btn-primary {
+  justify-content: center;
+}
+
+/* =========================================
+   8. АДМІН-ПАНЕЛЬ ТА ТАБЛИЦІ (admin-users.html)
+   ========================================= */
+.logout-text {
+  margin-left: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.admin-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.users-table th, .users-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.users-table th {
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.users-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.role-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.role-admin {
+  background-color: #ffcccc;
+  color: #cc0000;
+}
+
+.role-regular {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.action-cells {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.icon-btn.delete-btn:hover {
+  color: #ff4d4f;
+}
+.icon-btn.edit-btn:hover {
+  color: #3498db;
+}
+
+/* =========================================
+   9. МОДАЛЬНІ ВІКНА (Спливаючі попапи)
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.modal-overlay:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+.modal-overlay:target .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.modal-header h3 {
+  text-transform: capitalize;
+  color: #2c3e50;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  color: #999;
+  text-decoration: none;
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: #ff4d4f;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+.modal-actions a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.delete-dialog p {
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* =========================================
+   10. ПРОФІЛЬ КОРИСТУВАЧА (user-profile.html)
+   ========================================= */
+.profile-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.profile-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  overflow: hidden;
+}
+
+/* Ліва частина з аватаркою */
+.profile-avatar {
+  background-color: #f4f7fb;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #eee;
+  min-width: 250px;
+}
+.profile-avatar i {
+  font-size: 6rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Права частина з даними */
+.profile-details {
+  padding: 40px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+.detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.detail-value {
+  color: #333;
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   11. ДОДАТКОВІ СТОРІНКИ (Services, Doctors, Contacts)
+   ========================================= */
+.page-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.info-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s;
+}
+.info-card:hover {
+  transform: translateY(-5px);
+}
+.info-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+.info-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.doctor-avatar {
+  font-size: 4rem;
+  color: #cce5ff;
+  background-color: #2c3e50;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.specialty {
+  display: block;
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+.contact-info p {
+  margin-bottom: 15px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.contact-info p i {
+  color: #3498db;
+  font-size: 1.2rem;
+  width: 20px;
+}
+
+/* Кнопка "назад" на сторінці логіну */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+.back-link i {
+  margin-right: 8px;
+}
+.back-link:hover {
+  color: #2c3e50;
+}
+
+/* =========================================
+   8. АДАПТИВНІСТЬ (Мобільна версія)
+   ========================================= */
+@media (max-width: 768px) {
+  .burger-label {
+    display: block;
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  .nav-link {
+    margin: 15px 0;
+  }
+  .burger-checkbox:checked ~ .main-nav {
+    display: flex;
+  }
+}/*# sourceMappingURL=style.css.map */
