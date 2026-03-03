@@ -15,9 +15,7 @@ body {
   padding: 0;
 }
 
-/* =========================================
-   5. ХЕДЕР ТА НАВІГАЦІЯ
-   ========================================= */
+
 .site-header {
   background-color: #2c3e50;
   padding: 15px 30px;
@@ -85,9 +83,7 @@ body {
   gap: 20px;
 }
 
-/* =========================================
-   6. ГОЛОВНИЙ КОНТЕНТ (Кнопки, Заголовки)
-   ========================================= */
+
 .btn-primary {
   display: flex;
   justify-content: space-between;
@@ -114,9 +110,7 @@ body {
   margin: 10px auto 0;
 }
 
-/* =========================================
-   7. СТОРІНКА ЛОГІНУ ТА ФОРМИ
-   ========================================= */
+
 .notification-banner {
   background-color: #ff4d4f;
   color: #ffffff;
@@ -206,9 +200,7 @@ body {
   justify-content: center;
 }
 
-/* =========================================
-   8. АДМІН-ПАНЕЛЬ ТА ТАБЛИЦІ (admin-users.html)
-   ========================================= */
+
 .logout-text {
   margin-left: 5px;
   font-weight: bold;
@@ -290,9 +282,7 @@ body {
   color: #3498db;
 }
 
-/* =========================================
-   9. МОДАЛЬНІ ВІКНА (Спливаючі попапи)
-   ========================================= */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -367,9 +357,6 @@ body {
   line-height: 1.5;
 }
 
-/* =========================================
-   10. ПРОФІЛЬ КОРИСТУВАЧА (user-profile.html)
-   ========================================= */
 .profile-section {
   max-width: 800px;
   margin: 40px auto;
@@ -389,7 +376,6 @@ body {
   overflow: hidden;
 }
 
-/* Ліва частина з аватаркою */
 .profile-avatar {
   background-color: #f4f7fb;
   padding: 40px;
@@ -406,7 +392,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* Права частина з даними */
 .profile-details {
   padding: 40px;
   flex-grow: 1;
@@ -437,9 +422,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* =========================================
-   11. ДОДАТКОВІ СТОРІНКИ (Services, Doctors, Contacts)
-   ========================================= */
 .page-section {
   max-width: 1000px;
   margin: 40px auto;
@@ -532,7 +514,6 @@ body {
   width: 20px;
 }
 
-/* Кнопка "назад" на сторінці логіну */
 .back-link {
   display: inline-block;
   margin-bottom: 20px;
@@ -550,9 +531,6 @@ body {
   color: #2c3e50;
 }
 
-/* =========================================
-   8. АДАПТИВНІСТЬ (Мобільна версія)
-   ========================================= */
 @media (max-width: 768px) {
   .burger-label {
     display: block;
@@ -579,4 +557,4 @@ body {
   .burger-checkbox:checked ~ .main-nav {
     display: flex;
   }
-}/*# sourceMappingURL=style.css.map */
+}

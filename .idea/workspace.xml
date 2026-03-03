@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c358d1eb-6e52-4136-84f4-9fb4fbebb60c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="c358d1eb-6e52-4136-84f4-9fb4fbebb60c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SolomiaLi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SolomiaLi/clinic-project",
+    "accountId": "d30c2a73-8738-42df-8580-c71f2fc3bfd4"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
 }]]></component>
@@ -38,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "lab-1-layout",
+    "git-widget-placeholder": "development",
     "last_opened_file_path": "C:/Users/olesi/PycharmProjects/lab6-clinic-solomia/web-labs"
   }
 }]]></component>
