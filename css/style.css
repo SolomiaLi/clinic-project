@@ -558,3 +558,11 @@ body {
     display: flex;
   }
 }
+
+  .spa-view {
+    display: none; /* За замовчуванням ховаємо всі блоки */
+}
+
+.spa-view.active-view {
+    display: block; /* Показуємо тільки той, у якого є цей клас */
+}
