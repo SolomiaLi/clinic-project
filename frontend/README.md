@@ -1,3 +1,35 @@
+# Clinic System - Single Page Application (Lab 3)
+
+Проєкт складається з React-фронтенду та FastAPI-бекенду.
+
+## Вимоги (Prerequisites)
+- Node.js (для фронтенду)
+- Python 3.8+ (для бекенду)
+
+## Крок 1. Запуск Бекенду (Python)
+1. Відкрийте термінал у папці бекенду.
+2. Встановіть залежності:
+   pip install fastapi uvicorn pydantic
+3. Запустіть сервер:
+   uvicorn main:app --reload --port 8080
+
+Бекенд працюватиме на http://localhost:8080
+
+## Крок 2. Запуск Фронтенду (React)
+1. Відкрийте новий термінал у папці фронтенду.
+2. Встановіть залежності:
+   npm install
+3. Запустіть додаток:
+   npm run dev
+
+Фронтенд буде доступний за адресою http://localhost:8000
+
+## Тестові дані для входу:
+- Роль Адміна: `admin@gmail.com` / `1111`
+- Роль Юзера: `olesya@mail.com` / `111`
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -1,122 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import UsersList from './pages/UsersList';
+import UserCreate from './pages/UserCreate';
+import UserDetails from './pages/UserDetails';
+import UserEdit from './pages/UserEdit';
+import Services from './pages/Service';
+import Doctors from './pages/Doctors';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const role = localStorage.getItem('userRole');
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    return (
+        <Router>
+            {/* Хедер у стилі референсу: темно-синій фон, білий текст */}
+            <nav className="p-5 bg-indigo-900 text-white flex justify-between items-center px-12">
+                <Link to="/" className="text-2xl font-bold tracking-wider">
+                    CLINIC<span className="text-blue-400">SYSTEM</span>
+                </Link>
+                
+                <div className="flex gap-8 text-sm font-semibold uppercase tracking-wide items-center">
+                    <Link to="/" className="hover:text-blue-300 transition-colors">Головна</Link>
+                    <Link to="/doctors" className="hover:text-blue-300 transition-colors">Лікарі</Link>
+                    <Link to="/services" className="hover:text-blue-300 transition-colors">Послуги</Link>
+                    
+                    {!role ? (
+                        <Link to="/login" className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full transition-colors">
+                            Вхід
+                        </Link>
+                    ) : (
+                        <>
+                            {role === 'admin' ? (
+                                <Link to="/users" className="text-blue-300 hover:text-white">Адмін-панель</Link>
+                            ) : (
+                                <Link to="/users/1" className="text-blue-300 hover:text-white">Мій профіль</Link>
+                            )}
+                            <button 
+                                onClick={() => { localStorage.clear(); window.location.href='/'; }}
+                                className="text-red-400 hover:text-red-300"
+                            >
+                                Вихід
+                            </button>
+                        </>
+                    )}
+                </div>
+            </nav>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/users" element={<UsersList />} />
+                <Route path="/users/create" element={<UserCreate />} />
+                <Route path="/users/:id" element={<UserDetails />} />
+                <Route path="/users/edit/:id" element={<UserEdit />} />
+                {/* Заглушки для нових сторінок, створимо їх пізніше */}
+                <Route path="/doctors" element={<Doctors />} />
+                <Route path="/services" element={<Services />} />
+            </Routes>
+        </Router>
+    );
 }
 
-export default App
+export default App;
