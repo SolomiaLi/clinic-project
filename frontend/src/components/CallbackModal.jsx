@@ -10,7 +10,6 @@ const CallbackModal = ({ onClose }) => {
         e.preventDefault();
         setLoading(true);
         try {
-            // Відправляємо дані на бекенд
             await api.post('/callbacks', { name, phone });
             alert('Дякуємо! Наш адміністратор зателефонує вам найближчим часом.');
             onClose();
@@ -22,11 +21,8 @@ const CallbackModal = ({ onClose }) => {
     };
 
     return (
-        // bg-black/40 - напівпрозорий чорний, backdrop-blur-md - розмиття фону
         <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative animate-fade-in-up">
-                
-                {/* Хрестик закриття */}
                 <button 
                     onClick={onClose} 
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
