@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 app = FastAPI(title="Clinic API")
+appointments_db = []
 
 app.add_middleware(
     CORSMiddleware,
@@ -74,6 +75,39 @@ class UserResponse(BaseModel):
     email: str
     role: str
 
+class AppointmentCreate(BaseModel):
+    doctor_id: int
+    doctor_name: str
+    patient_name: str
+    date: str
+    time: str
+
+callbacks_db = []
+
+class CallbackRequest(BaseModel):
+    name: str
+    phone: str
+
+@app.post("/api/callbacks")
+def create_callback(request: CallbackRequest):
+    callbacks_db.append(request.dict())
+    return {"message": "Запит отримано"}
+
+@app.get("/api/callbacks")
+def get_callbacks():
+    return callbacks_db
+
+@app.get("/api/appointments")
+def get_appointments():
+    return appointments_db
+
+@app.post("/api/appointments")
+def create_appointment(appointment: AppointmentCreate):
+    new_id = len(appointments_db) + 1
+    data = appointment.dict()
+    data["id"] = new_id
+    appointments_db.append(data)
+    return {"message": "Запис створено успішно", "appointment": data}
 
 @app.post("/api/login")
 def login(credentials: LoginRequest):

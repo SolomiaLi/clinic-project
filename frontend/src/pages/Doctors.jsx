@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import api from '../api/axios';
+import BookingModal from '../components/BookingModal';
 
 const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
     const [error, setError] = useState('');
+    const [selectedDoctor, setSelectedDoctor] = useState(null);
 
     useEffect(() => {
         const fetchDoctors = async () => {
@@ -47,7 +49,6 @@ const Doctors = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {doctors.map((doctor) => (
                             <div key={doctor.id} className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all hover:-translate-y-1">
-                                {/* Блок з аватаркою-емодзі */}
                                 <div className="h-56 bg-blue-50 flex items-center justify-center text-8xl shadow-inner border-b border-gray-100">
                                     {doctor.icon}
                                 </div>
@@ -63,8 +64,11 @@ const Doctors = () => {
                                         Досвід роботи: {doctor.experience}
                                     </p>
                                     
-                                    <button className="w-full py-3 border-2 border-blue-500 text-blue-600 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors">
-                                        Записатися на прийом
+                                    <button 
+                                        onClick={() => setSelectedDoctor(doctor)}
+                                        className="w-full py-3 border-2 border-blue-500 text-blue-600 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors"
+                                    >
+                                    Записатися на прийом
                                     </button>
                                 </div>
                             </div>
@@ -72,6 +76,10 @@ const Doctors = () => {
                     </div>
                 )}
             </div>
+            {selectedDoctor && (
+                <BookingModal  doctor={selectedDoctor}  onClose={() => setSelectedDoctor(null)} 
+                />
+            )}
         </div>
     );
 };

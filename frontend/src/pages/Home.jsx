@@ -1,4 +1,9 @@
+import { useState } from 'react';
+import CallbackModal from '../components/CallbackModal';
+
+// eslint-disable-next-line max-lines-per-function
 const Home = () => {
+    const [isCallbackOpen, setIsCallbackOpen] = useState(false);
     return (
         <div className="bg-gray-50 min-h-screen">
             <div className="bg-indigo-900 text-white pt-20 pb-32 px-12 relative">
@@ -12,7 +17,9 @@ const Home = () => {
                         </h1>
                         <p className="text-gray-300 text-lg mb-8 leading-relaxed">Провідна клініка з інноваційними методами лікування та діагностики. Ми дбаємо про вас 24/7, надаючи найкращий сервіс та професійний підхід.
                         </p>
-                        <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg transition-transform hover:-translate-y-1">
+                        <button 
+                            onClick={() => setIsCallbackOpen(true)}
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg transition-transform hover:-translate-y-1">
                             Записатися на прийом
                         </button>
                     </div>
@@ -75,6 +82,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {isCallbackOpen && (
+                <CallbackModal onClose={() => setIsCallbackOpen(false)} />
+            )}
         </div>
     );
 };

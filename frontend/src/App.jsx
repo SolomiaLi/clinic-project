@@ -7,13 +7,13 @@ import UserDetails from './pages/UserDetails';
 import UserEdit from './pages/UserEdit';
 import Services from './pages/Service';
 import Doctors from './pages/Doctors';
+import AdminRequests from './pages/AdminRequests';
 
 function App() {
     const role = localStorage.getItem('userRole');
 
     return (
         <Router>
-            {/* Хедер у стилі референсу: темно-синій фон, білий текст */}
             <nav className="p-5 bg-indigo-900 text-white flex justify-between items-center px-12">
                 <Link to="/" className="text-2xl font-bold tracking-wider">
                     CLINIC<span className="text-blue-400">SYSTEM</span>
@@ -53,7 +53,7 @@ function App() {
                 <Route path="/users/create" element={<UserCreate />} />
                 <Route path="/users/:id" element={<UserDetails />} />
                 <Route path="/users/edit/:id" element={<UserEdit />} />
-                {/* Заглушки для нових сторінок, створимо їх пізніше */}
+                <Route path="/admin/requests" element={<AdminRequests />} />
                 <Route path="/doctors" element={<Doctors />} />
                 <Route path="/services" element={<Services />} />
             </Routes>
