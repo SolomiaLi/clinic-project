@@ -8,9 +8,15 @@ import UserEdit from './pages/UserEdit';
 import Services from './pages/Service';
 import Doctors from './pages/Doctors';
 import AdminRequests from './pages/AdminRequests';
+import ChatWidget from './components/ChatWidget';
+import AdminChat from './pages/AdminChat';
+import Register from './pages/Register';
+
 
 function App() {
     const role = localStorage.getItem('userRole');
+    const userName = localStorage.getItem('userName') || "Користувач";
+    const userId = localStorage.getItem('userId');
 
     return (
         <Router>
@@ -30,10 +36,10 @@ function App() {
                         </Link>
                     ) : (
                         <>
-                            {role === 'admin' ? (
+                            {role === 'Admin' || role === 'admin' ? (
                                 <Link to="/users" className="text-blue-300 hover:text-white">Адмін-панель</Link>
                             ) : (
-                                <Link to="/users/1" className="text-blue-300 hover:text-white">Мій профіль</Link>
+                                <Link to={`/users/${userId}`} className="text-blue-300 hover:text-white">Мій профіль</Link>
                             )}
                             <button 
                                 onClick={() => { localStorage.clear(); window.location.href='/'; }}
@@ -56,7 +62,10 @@ function App() {
                 <Route path="/admin/requests" element={<AdminRequests />} />
                 <Route path="/doctors" element={<Doctors />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/admin/chat" element={<AdminChat />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
+            <ChatWidget userName={userName} userRole={role} />
         </Router>
     );
 }

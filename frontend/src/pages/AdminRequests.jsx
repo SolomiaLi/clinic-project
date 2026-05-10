@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
 import api from '../api/axios';
+import AdminChat from './AdminChat'; 
+import { useNavigate } from 'react-router-dom';
 
 const AdminRequests = () => {
     const [appointments, setAppointments] = useState([]);
     const [callbacks, setCallbacks] = useState([]);
-    const [error, setError] = useState('');
+    const [error, setError] = useState(''); const navigate = useNavigate();
 
     useEffect(() => {
         const fetchRequests = async () => {
             try {
-                // Завантажуємо і записи, і дзвінки
                 const appRes = await api.get('/appointments');
-                const callRes = await api.get('/callbacks'); // зараз додамо цей get-запит в бек
+                const callRes = await api.get('/callbacks'); 
                 setAppointments(appRes.data);
                 setCallbacks(callRes.data);
             } catch {
@@ -23,12 +24,18 @@ const AdminRequests = () => {
 
     return (
         <div className="bg-gray-50 min-h-screen p-8">
-            <h1 className="text-3xl font-bold text-indigo-900 mb-8">Заявки від пацієнтів</h1>
+            <h1 className="text-3xl font-bold text-indigo-900 mb-8">Панель адміністратора</h1>
             
             {error && <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">{error}</div>}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Таблиця записів до лікаря */}
+            <button 
+                onClick={() => navigate(-1)} 
+                className="mb-6 flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+            >
+                <span className="mr-2">⬅</span> Повернутися назад
+            </button>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                     <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
                         <span className="text-2xl mr-2">📅</span> Записи на прийом
@@ -52,7 +59,6 @@ const AdminRequests = () => {
                     )}
                 </div>
 
-                {/* Таблиця замовлень дзвінків */}
                 <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                     <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
                         <span className="text-2xl mr-2">📞</span> Замовлення дзвінків
@@ -67,15 +73,15 @@ const AdminRequests = () => {
                                         <p className="font-bold text-indigo-900">{call.name}</p>
                                         <p className="text-gray-600">{call.phone}</p>
                                     </div>
-                                    <button className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700">
-                                        Оброблено
-                                    </button>
+                                    <button className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700"> Оброблено </button>
                                 </div>
                             ))}
                         </div>
                     )}
                 </div>
             </div>
+
+            <div className="w-full"> <AdminChat /> </div>
         </div>
     );
 };

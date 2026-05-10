@@ -28,9 +28,6 @@ const UserDetails = () => {
             <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div className="flex justify-between items-center mb-6 border-b pb-4">
                     <h1 className="text-2xl font-bold text-indigo-900">Профіль</h1>
-                    <Link to="/users" className="text-blue-500 hover:underline text-sm font-semibold">
-                        ← До списку
-                    </Link>
                 </div>
 
                 <div className="space-y-4">

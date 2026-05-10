@@ -70,7 +70,6 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Картка 3: Підтримка */}
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow">
                         <div className="h-48 bg-blue-50 flex items-center justify-center text-7xl shadow-inner border-b border-gray-100">
                             📞

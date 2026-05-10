@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 
 const UserEdit = () => {
@@ -25,7 +25,7 @@ const UserEdit = () => {
         const updatedUser = { name, email, role, password };
 
         try {
-            await api.put(`/users/${id}`, updatedUser); navigate('/users');
+            await api.put(`/users/${id}`, updatedUser); navigate(-1);
         } catch {
             setError('Помилка при оновленні користувача');
         }
@@ -36,7 +36,7 @@ const UserEdit = () => {
             <div className="w-full max-w-lg p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold text-indigo-900">Редагування</h1>
-                    <Link to="/users" className="text-gray-500 hover:text-indigo-900 transition-colors">✕ Скасувати</Link>
+                    <button onClick={() => navigate(-1)} className="text-gray-500 hover:text-indigo-900 transition-colors cursor-pointer">✕ Скасувати</button>
                 </div>
 
                 {error && (

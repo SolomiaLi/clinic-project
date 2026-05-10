@@ -20,7 +20,6 @@ const Services = () => {
 
     return (
         <div className="bg-gray-50 min-h-screen pb-20">
-            {/* Синій хедер (якщо він тобі потрібен за загальним стилем) */}
             <div className="bg-indigo-900 text-white py-16 px-6 text-center">
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">
                     Прайс-лист послуг

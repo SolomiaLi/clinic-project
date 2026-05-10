@@ -26,7 +26,6 @@ const UsersList = () => {
         <div className="p-8 bg-gray-50 min-h-screen">
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl font-bold text-gray-800">Кабінет Адміна: Користувачі</h1>
-                {/* НОВА КНОПКА ДЛЯ ЗАЯВОК */}
                 <Link to="/admin/requests" className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-semibold shadow-md">
                         Переглянути заявки пацієнтів
                 </Link>

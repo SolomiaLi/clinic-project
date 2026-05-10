@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import api from '../api/axios';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    
 
     const handleLogin = async (e) => {
-        e.preventDefault();
-        setError('');
+        e.preventDefault(); setError('');
         
         try {
             const response = await api.post('/login', { email, password });
@@ -18,11 +17,14 @@ const Login = () => {
             const userId = response.data.user.id;
             
             localStorage.setItem('userRole', userRole);
+            localStorage.setItem('userName', response.data.user.name);
+            localStorage.setItem('userId', userId); // <-- ДОДАЛИ ЦЕ!
+            localStorage.setItem('user', JSON.stringify(response.data.user));
             
-            if (userRole === 'Admin') {
-                navigate('/users');
+            if (userRole === 'Admin' || userRole === 'admin') {
+                window.location.href = '/users'; // <-- Оновлює сторінку і кидає в адмінку
             } else {
-                navigate(`/users/${userId}`);
+                window.location.href = `/users/${userId}`; // <-- Оновлює сторінку і кидає в кабінет
             }
         // eslint-disable-next-line no-unused-vars
         } catch (err) {
@@ -69,6 +71,10 @@ const Login = () => {
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
+
+                    <p className="mt-4 text-center text-sm text-gray-600">
+                        Немає акаунту? <Link to="/register" className="text-blue-600 hover:text-blue-500 font-medium">Зареєструватися</Link>
+                    </p>
 
                     <button 
                         type="submit" 
